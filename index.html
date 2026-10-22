@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            padding-right: 100px;
+            padding-left: 100px;
+            align-items: center;
+            background-color: white;
+            width: 100%;
+        }
+
+        header {
+            position: sticky;
+            top: 0px;
+            z-index: 1000;
+        }
+
+        header nav h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        header nav ul a {
+            text-decoration: none;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header nav ul a:hover {
+            color: orangered;
+            border-bottom: 1px solid orangered;
+        }
+
+        header nav div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header nav div button {
+            width: 130px;
+            height: 40px;
+            background-color: orangered;
+            border-radius: 20px;
+            border: none;
+            color: white;
+        }
+
+        .hero-section img {
+            width: 100%;
+        }
+
+        .hero-section {
+            position: relative;
+        }
+
+        .hero-section div {
+            position: absolute;
+            top: 100px;
+            left: 50px;
+        }
+
+        .hero-section div .button1 {
+            color: orangered;
+            background-color: rgba(255, 68, 0, 0.216);
+            border-radius: 20px;
+            width: 100px;
+            border: none;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section div h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 60px;
+        }
+
+        .hero-section div span {
+            color: orangered;
+        }
+
+        .hero-section div p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 30px;
+        }
+
+        .hero-section div .button2 {
+            color: white;
+            background-color: orangered;
+            border-radius: 30px;
+            border: none;
+            width: 140px;
+            height: 50px;
+        }
+
+        .picture {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 80px;
+        }
+
+        .picture img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .picture h2 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .picture div {
+            text-align: center;
+        }
+
+        .food div {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .food {
+            margin-top: 100px;
+        }
+
+        .food-top {
+            padding-left: 50px;
+            padding-right: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .food-top h1 {
+            margin-bottom: 10px;
+        }
+
+        .food-top span {
+            border-top: 3px solid orangered;
+            padding-top: 10px;
+        }
+
+        .food-top .right p {
+            color: orangered;
+        }
+
+        .food .menu {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .food .menu div {
+            width: 220px;
+            border: 1px solid gainsboro;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        .food .menu div img {
+            width: 100%;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .food .menu div:hover {
+            transform: scale(1.05);
+        }
+
+        .food .menu div button {
+            background-color: orangered;
+            color: white;
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .food .menu div span {
+            color: orangered;
+        }
+
+        .menu p {
+            color: gray;
+            padding-left: 10px;
+        }
+
+        .menu h3 {
+            padding-left: 10px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+        }
+
+        .menu h2 {
+            padding-left: 10px;
+            padding-bottom: 20px;
+        }
+
+        .about-us {
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: space-between;
+        }
+
+        .about-us .left .bottom {
+            display: flex;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .about-us .left .bottom img {
+            height: 80px;
+            width: 80px;
+        }
+
+        .offer{position: relative;}
+
+        .offer img{width: 94%;
+                   margin: 40px;
+                   border-radius: 10px;}
+
+        .offer .background-text{position: absolute;
+                                 top: 120px;
+                                 left: 100px;}
+
+        .offer .background-text .top-button{width: 100px;
+                                             background-color: green;
+                                             color: white;
+                                             border-radius: 20px;
+                                             border: none;
+                                             height: 30px;
+                                             margin-bottom: 20px;} 
+
+        .offer .background-text .top-button:hover{transform: scale(1.03);}                                     
+                                             
+        .offer .background-text .bottom-button{width: 150px;
+                                                 background-color: green;
+                                                 color: white;
+                                                 border-radius: 20px;
+                                                 border: none;
+                                                 height: 40px;}  
+                                                 
+        .offer .background-text .bottom-button:hover{transform: scale(1.03);}                                         
+                                                 
+        .offer .background-text span{color: green;}       
+        
+        .offer .background-text h1{margin-bottom: 10px;}
+
+        .offer .background-text p{margin-bottom: 20px;}
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h1><img src="logo.png" alt=""> Foodie</h1>
+
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+            <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <button>Order Now</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <img src="background.png" alt="">
+        <div>
+            <button class="button1">Fresh & Tasty</button>
+            <h1>Delicious Food <br>
+                <span>Delivered To You</span>
+            </h1>
+            <p>Enjoy fresh, tasty and healthy meals from our kitchen. <br>
+                Made with love, delivered with care.</p>
+            <button class="button2">Order Now ➔</button>
+        </div>
+    </div>
+
+    <div class="picture">
+
+        <div>
+            <img src="burger.png" alt="Burgers">
+            <h2>Burgers</h2>
+        </div>
+
+        <div>
+            <img src="pizza.png" alt="Pizza">
+            <h2>Pizza</h2>
+        </div>
+
+        <div>
+            <img src="pasta.png" alt="Pasta">
+            <h2>Pasta</h2>
+        </div>
+
+        <div>
+            <img src="drink.png" alt="Drinks">
+            <h2>Drinks</h2>
+        </div>
+
+        <div>
+            <img src="chicken.png" alt="Chicken">
+            <h2>Chicken</h2>
+        </div>
+
+        <div>
+            <img src="dessert.png" alt="Desserts">
+            <h2>Desserts</h2>
+        </div>
+
+    </div>
+
+    <div class="food">
+
+        <div class="food-top">
+            <div class="left">
+                <h1><span>P</span>opular Dishes</h1>
+                <p>Tasty meals, made for you.</p>
+            </div>
+
+            <div class="right">
+                <p>View All ➔</p>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div>
+                <img src="classic burger.png" alt="Classic Burger">
+                <h3>Classic Burger</h3>
+                <h2>$5.99</h2>
+                <p><span>★★★★★</span>(104)</p>
+                <button>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div>
+                <img src="margherita pizza.png" alt="Margherita Pizza">
+                <h3>Margherita Pizza</h3>
+                <h2>$7.99</h2>
+                <p><span>★★★★★</span>(98)</p>
+                <button>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div>
+                <img src="creamy pasta.png" alt="Creamy Pasta">
+                <h3>Creamy Pasta</h3>
+                <h2>$6.99</h2>
+                <p><span>★★★★★</span>(74)</p>
+                <button>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div>
+                <img src="grilled chicken bowl.png" alt="Grilled Chicken Bowl">
+                <h3>Grilled Chicken Bowl</h3>
+                <h2>$8.99</h2>
+                <p><span>★★★★★</span>(41)</p>
+                <button>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+            <div>
+                <img src="chocolate cake.png" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <h2>$4.99</h2>
+                <p><span>★★★★★</span>(42)</p>
+                <button>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="offer">
+        <img src="bowl-background.png" alt="">
+        <div class="background-text">
+
+            <button class="top-button">Special Offer</button>
+            <h1>Get 20% OFF on Your First Order</h1>
+            <p>Use code:<span>FOOD20</span>at checkout</p>
+            <button class="bottom-button">Order Now ➔</button>
+
+        </div>
+    </div>
+
+    <div class="about-us">
+        <div class="left">
+            <div class="top">
+                <p></p>
+                <h1>We Serve Fresh <br>
+                    & Healthy Food
+                </h1>
+                <p>At Foodie, we believe good food brings people <br>
+                    together. That's why we use fresh ingredients, <br>
+                    prepare every meal with care, and deliver it <br>
+                    straight to your door.
+                </p>
+            </div>
+
+            <div class="bottom">
+
+                <div>
+                    <img src="about us leaf.png" alt="">
+                    <h3>Fresh Ingredients</h3>
+                    <p>Always fresh & natural</p>
+                </div>
+
+                <div>
+                    <img src="about us shrit.png" alt="">
+                    <h3>Hygienic Kitchen</h3>
+                    <p>Clean & safe food</p>
+                </div>
+
+                <div>
+                    <img src="about us truck.png" alt="">
+                    <h3>Fast Delivery</h3>
+                    <p>On time, every time</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <img src="about-us.png" alt="">
+
+        </div>
+
+    </div>
+
+    <div class="reviwe">
+        <div class="top">
+
+            <div>
+                <h1>What Our Customers Say</h1>
+                <p>Real people, real reviews.</p>
+            </div>
+            <div>
+                <p>View All ➔</p>
+            </div>
+
+        </div>
+        <div class="bottom">
+
+            <div>
+                <div>
+                    <div><img src="ali raza.png" alt=""></div>
+                    <div>
+                        <h3>Ali Raza</h3>
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+
+                <p>"The food is always fresh and <br>
+                   delicious. Highly recommended!"
+                </p>
+
+                <p><i class="fa-solid fa-location-dot"></i>Karachi, Pakistan</p>
+            </div>
+
+            <div>
+                <div>
+                    <div><img src="Sara Khan.png" alt=""></div>
+                    <div>
+                        <h3>Sara Khan</h3>
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+
+                <p>"Amazing taste and super fast <br>
+                    delivery. I love this place!"
+                </p>
+
+                <p><i class="fa-solid fa-location-dot"></i>Lahore, Pakistan</p>
+
+            </div>
+
+            <div>
+                <div>
+                    <div><img src="Usman Ahmed.png" alt=""></div>
+                    <div>
+                        <h3>Usman Ahmed</h3>
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+
+                <p>"Best food delivery service <br>
+                    I've tried so far. Keep it up!"
+                </p>
+
+                <p><i class="fa-solid fa-location-dot"></i>Islamabad, Pakistan</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
